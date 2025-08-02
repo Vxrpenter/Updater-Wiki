@@ -10,20 +10,20 @@ Installation is easy and straightforward, just add the library to your build con
 <a href=""><img src="https://img.shields.io/maven-central/v/io.github.vxrpenter/updater?style=flat-square&logo=apachemaven&logoColor=f18800&color=f18800"></a>
 
 === "Kotlin Gradle"
-```kotlin title="build.gradle.kts"
-dependencies {
-  implementation("io.github.vxrpenter:updater:0.1.0")
-}
-```
+    ```kotlin title="build.gradle.kts"
+    dependencies {
+      implementation("io.github.vxrpenter:updater:0.1.0")
+    }
+    ```
 
 === "Maven"
 
-```xml title="pom.xml"
-<dependency>
-    <groupId>io.github.vxrpenter</groupId>
-    <artifactId>updater</artifactId>
-    <version>VERSION</version>
-</dependency>
-```
+    ```xml title="pom.xml"
+    <dependency>
+        <groupId>io.github.vxrpenter</groupId>
+        <artifactId>updater</artifactId>
+        <version>VERSION</version>
+    </dependency>
+    ```
 
 *Replace `VERSION` with the latest version*
