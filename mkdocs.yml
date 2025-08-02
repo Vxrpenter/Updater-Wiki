@@ -73,3 +73,15 @@ markdown_extensions:
       permalink: true
   - pymdownx.tabbed:
       alternate_style: true
+
+nav:
+  - Home: index.md
+  - Setup:
+    - Installation: setup/installation.md
+    - Logging: setup/logging.md
+  - Using Updater:
+    - Getting Started: using-updater/index.md
+    - Update Schemas: using-updater/update-schemas.md
+    - Upstreams: using-updater/upstreams.md
+    - Configuration: using-updater/configuration.md
+    - Current Version: using-updater/current-version.md
