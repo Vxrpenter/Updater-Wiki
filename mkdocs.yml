@@ -83,5 +83,7 @@ nav:
     - Getting Started: using-updater/index.md
     - Update Schemas: using-updater/update-schemas.md
     - Upstreams: using-updater/upstreams.md
+    - Versions: using-updater/versions.md
     - Configuration: using-updater/configuration.md
     - Current Version: using-updater/current-version.md
+  - KDoc: https://vxrpenter.github.io/updater/

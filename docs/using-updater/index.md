@@ -36,6 +36,8 @@ The classifiers that can be added using the `SchemaBuilder` are `DefaultClassifi
             value = "a"
             // The divider between identifier value and version number
             divider = "-"
+            // Divider between the components
+            componentDivider = "."
             // The priority that the classifier has in comparison to other classifiers
             priority = ClassifierPriority.LOW
         }
@@ -43,11 +45,13 @@ The classifiers that can be added using the `SchemaBuilder` are `DefaultClassifi
         classifier {
             value = "b"
             divider = "-"
+            componentDivider = "."
             priority = ClassifierPriority.HIGH
         }
         classifier {
             value = "rc"
             divider = "-"
+            componentDivider = "."
             priority = ClassifierPriority.HIGHEST
         }
     }
@@ -68,7 +72,7 @@ You will need to enter certain information needed to fetch your project from the
 
 The last thing will be to check for new versions. This can be easily achived by invoking the `Updater` class and then calling the `checkUpdates` function.
 It will require you to enter the current version of your project (if you want to know how to get the current version, look [here](current-version.md) followed by
-the `´UpdateSchema` and the `Upstream`.
+the `UpdateSchema` and the `Upstream`.
 
 You are also able to configure certain behaviors of the `Updater` like adding a periodic check, customizing the notification message, configuring the read/write timeout, etc.
 
