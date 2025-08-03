@@ -9,7 +9,7 @@ Versions are version strings that have been split into their specific components
 
 ## DefaultVersions and DefaultClassifiers
 
-The `DefaultVersion` and the `DefaultClassifier` are the most commonly used versions and classifiers,
+The `DefaultVersion` and `DefaultClassifier` are the most commonly used versions and classifiers,
 because they implementation the most important values for their respective types.
 
 The `DefaultVersion` contains a `components` function as a companion object and the `DefaultClassifier` a `classifier` function.
@@ -28,7 +28,7 @@ They are used to create the specific components or `DefaultClassifier` from a ve
 
 When your version contains special parameters, you may want to create a custom one.
 
-To create a custom `Version` you will first need to create a class
+To create a custom `Version`, you will first need to create a class
 (preferably a data class) that extends `Version` and override the `value`, `components`, `classifier` values
 and the functions.
 
@@ -53,7 +53,7 @@ and the functions.
 
 ### CompareTo Function
 
-The compareTo function is used to compare a version with another version.
+The compareTo function is used to compare a version to another version.
 
 !!!example
 
@@ -78,7 +78,7 @@ The compareTo function is used to compare a version with another version.
 
 !!! note "Note"
 
-    This function is located inside the companion object to allow calls without initializing the version
+    This function is located inside the companion object to allow invokations without initializing the version
 
 The components function returns a collection of strings (components) from a version string. 
 These components are the individual numbers in the version.
@@ -130,7 +130,7 @@ and the functions.
 
 ### CompareTo Function
 
-The compareTo function is used to compare a classifier with another version.
+The compareTo function is used to compare a classifier to another version.
 
 !!!example
 
@@ -151,7 +151,7 @@ The compareTo function is used to compare a classifier with another version.
 
 !!! note "Note"
 
-    This function is located inside the companion object to allow calls without initializing the version
+    This function is located inside the companion object to allow invokations without initializing the version
 
 The classifier function returns a classifier from a version string. 
 The classifier will be paired with the `ClassifierPriority` from the `UpdateSchema`.
