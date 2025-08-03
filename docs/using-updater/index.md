@@ -13,8 +13,8 @@ date: 2025-08-02
 ### Creating a Schema
 
 To begin,
-we first have to create an UpdateSchema
-that allows the library to deserialize your versions into readable components and classifiers.
+we have to create an UpdateSchema
+that allows the library to decode your versions into readable components and classifiers.
 The example below shows how such a schema could look.
 It uses the `Schema` function which uses the `SchemaBuilder` to create a `DefaultSchema`.
 Most upstreams will accept a `DefaultSchema` but some will beed specific schema types, so keep an eye out for that.
@@ -59,19 +59,22 @@ The classifiers that can be added using the `SchemaBuilder` are `DefaultClassifi
 
 ### Configuring the Upstream
 
-The next step will be configuring the upstream (the location that we upload our versions). In this example we will use GitHub as our upstream.
-You will need to enter certain information needed to fetch your project from the upstream's api.
+The next step will be configuring the upstream (the location that we upload our versions).
+In this example, we will use GitHub as our upstream.
+You will need to enter certain information needed to fetch your project from the upstream api.
 
 !!! example
 
     ```kotlin
-    val upstream = GithubUpstream(user = "Vxrpenter", repo = "Updater")
+    val upstream = GitHubUpstream(user = "Vxrpenter", repo = "Updater")
     ```
 
 ### Checking for Updates
 
-The last thing will be to check for new versions. This can be easily achived by invoking the `Updater` class and then calling the `checkUpdates` function.
-It will require you to enter the current version of your project (if you want to know how to get the current version, look [here](current-version.md) followed by
+The last thing will be to check for new versions.
+This can be easily achieved by invoking the `Updater` class and then calling the `checkUpdates` function.
+It will require you to enter the current version of your project
+(if you want to know how to get the current version, look [here](current-version.md) followed by
 the `UpdateSchema` and the `Upstream`.
 
 You are also able to configure certain behaviors of the `Updater` like adding a periodic check, customizing the notification message, configuring the read/write timeout, etc.
