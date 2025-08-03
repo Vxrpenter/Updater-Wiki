@@ -52,7 +52,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Vxrpenter/Updater
     - icon: fontawesome/solid/book
-      link: https://vxrpenter.github.io/updater/
+      link: https://vxrpenter.github.io/Updater/
     - icon: fontawesome/solid/paper-plane
       link: https://github.com/Vxrpenter#%EF%B8%8F-contact-me-
 
@@ -86,4 +86,4 @@ nav:
     - Versions: using-updater/versions.md
     - Configuration: using-updater/configuration.md
     - Current Version: using-updater/current-version.md
-  - KDoc: https://vxrpenter.github.io/updater/
+  - KDoc: https://vxrpenter.github.io/Updater/
