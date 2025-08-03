@@ -155,7 +155,7 @@ Then you are able to add specific values as well as functions to the class to ha
     ) : UpdateSchema {
 
         fun doSomethingWithUser() {
-            TODO("Do something")
+            TODO("Not yet implemented")
         }
 
     }
@@ -202,7 +202,7 @@ Then you are able to add specific values as well as functions to the class to ha
     ) : SchemaClassifier {
 
         fun doSomethingWithUser() {
-            TODO("Do something")
+            TODO("Not yet implemented")
         }
 
     }
