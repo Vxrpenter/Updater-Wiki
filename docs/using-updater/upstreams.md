@@ -5,26 +5,27 @@ authors:
 date: 2025-08-02
 ---
 
-An `Upstream` defines a remote location where version data/files are hosted.
+An `Upstream` defines a remote location where version data is hosted.
 The `Upstream` also implements ways to fetch this data, convert it and generate `Updates` from it.
 
 ## Default Upstreams
 
-By default, Updater provides a selection of already configured upstreams that can be used to query version data.
-These generally (but not limited to) consist of `GitHubUpstream` and `ModrinthUpstream`.
+By default, a selection of  already configured upstreams is provided. 
+They can be used to query version data and generally (but not limited to)
+consist of the `GitHubUpstream` and the `ModrinthUpstream`.
 
-You can configure an upstream by calling it and providing it with the needed information.
+You can configure an upstream by invoking it and providing it with the needed information.
 
 !!! example
 
     ```kotlin title="MyFile.kt"
-    val upstream = GithubUpstream(user = "Vxrpenter", repo = "Updater")
+    val upstream = GitHubUpstream(user = "Vxrpenter", repo = "Updater")
     ```
 
 ## Custom Upstreams
 
 When you are hosting your versions on an upstream that is not defined by default,
-you may have to create a custom one to fetch the version information.
+you will have to create a custom upstream to fetch the version information.
 
 To create a custom `Upstream` you will first need to create a class
 (preferably a data class) that extends `Upstream` and override the `upstreamPriority` and the functions,
@@ -55,10 +56,10 @@ as well as adding the values that are needed to find the location of your projec
 
 !!! tip "Tip"
 
-    It is advised to foolproof the request logic by checking for request failures 
+    It is recommended to foolproof the request logic by checking for request failures 
     and catching possible `SerializationException` if the response body has to be serialized.
 
-The fetch function generally consists of two parts, the actual requesting and the returning of the version.
+The fetch function generally consists of two parts, the requesting and the returning of the version.
 
 !!! example
 
