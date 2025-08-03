@@ -27,7 +27,7 @@ When you are hosting your versions on an upstream that is not defined by default
 you may have to create a custom one to fetch the version information.
 
 To create a custom `Upstream` you will first need to create a class
-(preferably a data class) and extend `Upstream` and override the `upstreamPriority` and the functions,
+(preferably a data class) that extends `Upstream` and override the `upstreamPriority` and the functions,
 as well as adding the values that are needed to find the location of your project on the upstreams api.
 
 !!! example

@@ -126,7 +126,7 @@ When handling versions with special parameters, the `DefaultUpdateSchema` may no
 If you have such a special version, creating a custom `UpdateSchema` may proof useful.
 
 To create a custom `UpdateSchema` you will first need to create a class
-(preferably a data class) and extend `UpdateSchema` and override the `prefix`,
+(preferably a data class) that extends `UpdateSchema` and override the `prefix`,
 `divider` and `classifier` values.
 
 !!! example
@@ -171,7 +171,7 @@ When handling versions with special classifiers, the `DefaultSchemaClassifier` m
 If you have such a special classifiers, creating a custom `SchemaClassifier` may proof useful.
 
 To create a custom `SchemaClassifier` you will first need to create a class
-(preferably a data class) and extend `SchemaClassifier` and override the `value`,
+(preferably a data class) that extends `SchemaClassifier` and override the `value`,
 `priority`, `divider` and `componentDivider` values.
 
 !!! example
