@@ -11,10 +11,10 @@ date: 2025-08-02
 
 # Updater
 <div align="left">
-  <a href="https://github.com/Vxrpenter/Updater/releases"><img src="https://img.shields.io/github/v/release/Vxrpenter/Updater?include_prereleases&logo=github&logoSize=amg&logoColor=077533&labelColor=333834&sort=date&display_name=tag&style=flat-square&label=Latest%20Release&color=077533" /></a>&nbsp;
-  <a href="https://github.com/Vxrpenter/Updater/issues"><img src="https://img.shields.io/github/issues/Vxrpenter/Updater?style=flat-square&logo=git&logoSize=amg&label=Issues&labelColor=333834&logoColor=077533&color=077533" /></a>&nbsp;
-  <a href="https://github.com/Vxrpenter/Updater/pulls"><img src="https://img.shields.io/github/issues-pr-raw/Vxrpenter/Updater?style=flat-square&logo=git&logoSize=amg&label=Pull%20Requests&labelColor=333834&logoColor=077533&color=077533" /></a>&nbsp; 
-  <a href="https://github.com/Vxrpenter/Updater/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Vxrpenter/Updater?style=flat-square&logo=amazoniam&logoSize=amg&logoColor=077533&label=Licenced%20Under&labelColor=333834&color=077533"/></a>&nbsp;
+  <a href="https://github.com/Vxrpenter/Updater/releases"><img src="https://img.shields.io/github/v/release/Vxrpenter/Updater?include_prereleases&logo=github&logoSize=amg&logoColor=white&sort=date&display_name=tag&style=flat-square&label=Latest%20Release&color=forestgreen" /></a>&nbsp;
+  <a href="https://github.com/Vxrpenter/Updater/issues"><img src="https://img.shields.io/github/issues/Vxrpenter/Updater?style=flat-square&logo=git&logoSize=amg&label=Issues&logoColor=orange&color=forestgreen" /></a>&nbsp;
+  <a href="https://github.com/Vxrpenter/Updater/pulls"><img src="https://img.shields.io/github/issues-pr-raw/Vxrpenter/Updater?style=flat-square&logo=git&logoSize=amg&label=Pull%20Requests&logoColor=orange&color=forestgreen" /></a>&nbsp; 
+  <a href="https://github.com/Vxrpenter/Updater/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Vxrpenter/Updater?style=flat-square&logo=amazoniam&logoSize=amg&logoColor=white&label=Licenced%20Under&color=forestgreen"/></a>&nbsp;
 </div>
 
 ## What is Updater?
