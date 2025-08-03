@@ -21,7 +21,7 @@ You can configure an upstream by calling it and providing it with the needed inf
     val upstream = GithubUpstream(user = "Vxrpenter", repo = "Updater")
     ```
 
-## Creating Custom Upstreams
+## Custom Upstreams
 
 When you are hosting your versions on an upstream that is not defined by default,
 you may have to create a custom one to fetch the version information.
