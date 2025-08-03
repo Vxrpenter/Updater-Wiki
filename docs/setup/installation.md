@@ -12,7 +12,7 @@ Installation is easy and straightforward, just add the library to your build con
 === "Kotlin Gradle"
     ```kotlin title="build.gradle.kts"
     dependencies {
-      implementation("io.github.vxrpenter:updater:0.1.0")
+      implementation("io.github.vxrpenter:updater:VERSION")
     }
     ```
 

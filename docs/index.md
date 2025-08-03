@@ -18,4 +18,25 @@ date: 2025-08-02
 </div>
 
 ## What is Updater?
-Updater is a kotlin (java) library for update management. It has integration with platforms like *GitHub*, *Modrinth*, *Spigot* and more to allow easy setup without much work. It allows users to specify a custom version schema that allows you to customize your versions as you like.
+Updater is a kotlin (java) library for update management. 
+It has integration with platforms like *GitHub*, *Modrinth*, *Spigot* and more to allow easy setup without much work. 
+It allows users to specify a custom version schema that allows you to customize your versions as you like.
+
+=== "Kotlin Gradle"
+    ```kotlin title="build.gradle.kts"
+    dependencies {
+      implementation("io.github.vxrpenter:updater:VERSION")
+    }
+    ```
+
+=== "Maven"
+
+    ```xml title="pom.xml"
+    <dependency>
+        <groupId>io.github.vxrpenter</groupId>
+        <artifactId>updater</artifactId>
+        <version>VERSION</version>
+    </dependency>
+    ```
+
+*Replace `VERSION` with the latest version*
