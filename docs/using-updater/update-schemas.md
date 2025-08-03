@@ -7,14 +7,14 @@ date: 2025-08-03
 
 # Update Schemas
 
-Update Schemas are a way to provide updater with instructions on how to read and compare versions. 
-They are one of the core functions of the library and are therefore an important topic.
+Update Schemas are a way to define instructions on how to read and compare versions.
 
 ## DefaultUpdateSchema
-The `DefaultUpdateSchema` is as the name implies the default schema that most [Upstreams](upstreams.md) will use.
-It contains configuration which are unspecific to any upstream and is most often paired with the `DefaultSchemaClassifier`.
+The `DefaultUpdateSchema` is as the name implies the default schema that will be used by most [Upstreams](upstreams.md).
+It contains configurations which are unspecific to any upstream and are most often paired with the `DefaultSchemaClassifier`.
 
-Using the builtin `SchemaBuilder`, you can easily create `DefaultUpdateSchemas`. Just call the `Schema` function and begin configuring:
+Using the builtin `SchemaBuilder`, you can easily create a `DefaultUpdateSchema`.
+Just call the `Schema` function and begin configuring.
 
 !!! example
 
@@ -43,13 +43,12 @@ Using the builtin `SchemaBuilder`, you can easily create `DefaultUpdateSchemas`.
 
 !!! danger "Danger"
 
-    When not provided with the correct `SchemaClassifier` type, the [Upstream](upstreams.md) will throw a `ClassifierTypeMismatch`
+    When not provided with the correct type of `SchemaClassifier`, the [Upstream](upstreams.md) will throw a `ClassifierTypeMismatch`
 
 Some [Upstreams](upstreams.md) will require you to use a custom `SchemaClassifier`. 
-If such a usage is required, it will be most often stated in the upstreams `fetch` function documentation.
+If such a usage is required, it will most often be stated in the upstreams `fetch` function documentation.
 
 When using the `SchemaBuilder`, you can easily add a custom classifier with the `customClassifier` function.
-The following example will use the `HangarSchemaClassifier` for the `HangarUpstream`:
 
 !!! example
 
@@ -69,15 +68,14 @@ The following example will use the `HangarSchemaClassifier` for the `HangarUpstr
 
 ## Schemas Indepth
 
-This section goes into the indepth function/purpose of the values inside the `DefaultUpdateSchema` as it is equal to the default
-`UpdateSchema` interface values.
+This section goes into the indepth function/purpose of the values inside the `DefaultUpdateSchema` as it is equal to the default `UpdateSchema` interface values.
 
 ### Prefix
 
 The prefix is the symbol that stands before the rest of the version string.
 This can be a simple `v` or `v.`, or even something like `version(new)-`. 
-This prefix will not be used for any comparisons and is generally configured to remove it.
-The removal is generally done by replacing the prefix with nothing, to retrieve the full version string.
+This prefix will not be used for any comparisons and is generally removed.
+The removal is generally done by replacing the prefix with an empty string.
 
 ### Divider
 
@@ -94,13 +92,13 @@ This section goes into the indepth function/purpose of the values inside the `De
 
 ### Value
 
-The value defines the "name" of the classifier, e.g. `rc`, `alpha`, `beta`, etc.
-This name will be used (after pairing it with the [Divider](#divider_1)) to remove the classifiers "name",
-for comparisons with other classifiers.
+The value defines the name of the classifier, e.g. `rc`, `alpha`, `beta`, etc.
+This name will be used (after pairing it with the [Divider](#divider_1)) to remove the classifiers naming,
+to retrieve the classifier version components.
 
 ### Divider
 
-The divider defines the symbol that divides the classifier from the actual version string, e.g. `-` or `+`.
+The divider defines the symbol that divides the classifier from the classifier version string, e.g. `-` or `+`.
 This can even be the [Divider](#divider) of the schema, as the divider will be paired with the [Value](#value) before removal.
 
 ### ComponentDivider
@@ -115,12 +113,13 @@ Each `Classifier` will implement this on its own so the behavior can differentia
 
 The priority defines the importance of  a `SchemaClassifer`.
 This is used to compare different `SchemaClassifiers` to find the prioritized one.
-Each priority has an assigned integer, the higher the priority the assigned integer.
+Each priority has an assigned integer, the higher the priority, the higher assigned integer.
 
 ## Custom Update Schemas
-!!! Warning "Custom Schema Notice"
+!!! Warning "Warning"
 
-    Using custom schemas also requires you to create custom [Upstreams](upstreams.md), custom [SchemaClassifiers](#custom-schema-classifiers) as well as custom [Versions](versions.md).
+    Using custom schemas also requires you to create custom [Upstreams](upstreams.md), 
+    custom [SchemaClassifiers](#custom-schema-classifiers) as well as custom [Versions](versions.md).
 
 When handling versions with special parameters, the `DefaultUpdateSchema` may not suffice.
 If you have such a special version, creating a custom `UpdateSchema` may proof useful.
@@ -141,7 +140,9 @@ To create a custom `UpdateSchema` you will first need to create a class
     }
     ```
 
-Then you are able to add specific values as well as functions to the class to handle the special attributes that your version comes with.
+Then you are able to add specific values,
+as well as functions to the class,
+to handle the special attributes that your version introduces.
 
 !!! example
 
@@ -165,7 +166,8 @@ Then you are able to add specific values as well as functions to the class to ha
 
 !!! Warning "Custom Schema Notice"
 
-    Using custom schema classifiers also requires you to create custom [Upstreams](upstreams.md), custom [UpdateSchemas](#custom-update-schemas) as well as custom [Versions](versions.md).
+    Using custom schema classifiers also requires you to create custom [Upstreams](upstreams.md), 
+    custom [UpdateSchemas](#custom-update-schemas) as well as custom [Versions](versions.md).
 
 When handling versions with special classifiers, the `DefaultSchemaClassifier` may not suffice.
 If you have such a special classifiers, creating a custom `SchemaClassifier` may proof useful.
@@ -187,7 +189,9 @@ To create a custom `SchemaClassifier` you will first need to create a class
     }
     ```
 
-Then you are able to add specific values as well as functions to the class to handle the special classifier that your version comes with.
+Then you are able to add specific values,
+as well as functions to the class,
+to handle the special classifier that your version introduces.
 
 !!! example
 
