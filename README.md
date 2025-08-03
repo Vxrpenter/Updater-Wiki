@@ -1,0 +1,1 @@
+The wiki for the [Updater Library](https://github.com/Vxrpenter/Updater)
