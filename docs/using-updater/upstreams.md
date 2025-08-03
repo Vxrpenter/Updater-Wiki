@@ -69,8 +69,8 @@ The fetch function generally consists of two parts, the actual requesting and th
         // Body is here a decoded response body
         val value = body.first().tagName
         // Creates the components and classifiers for a DefaultVersion and DefaultClassifier from the returned version string
-        val components = DefaultVersion.components(value, schema)
-        val classifier = DefaultClassifier.classifier(value, schema)
+        val components = DefaultVersion.components(value = value, schema = schema)
+        val classifier = DefaultClassifier.classifier(value = value, schema = schema)
     }
     ```
 
