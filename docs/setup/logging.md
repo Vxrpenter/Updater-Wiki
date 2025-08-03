@@ -5,13 +5,13 @@ authors:
 date: 2025-08-02
 ---
 
-!!! danger "Missing logging framework"
+!!! danger "Danger"
 
-    A missing logging framework will hinder the application to start
+    A missing logging framework will hinder the application from starting
 
 
-You can use all logging frameworks compatible with the [slf4j logging facade](https://www.slf4j.org/manual.html) but the usage of logback is encouraged.
-A simple implementation is listed below.
+You can use all logging frameworks compatible with the [SLF4J logging facade](https://www.slf4j.org/manual.html),
+but the usage of logback is encouraged.
 
 === "Kotlin Gradle"
     ```kotlin title="build.gradle.kts"
