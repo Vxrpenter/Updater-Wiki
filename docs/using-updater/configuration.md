@@ -26,7 +26,7 @@ invoke the `Configuration` function which will allow you to easily create a conf
             // Notify the user about a new version
             notify = true
             // Notification Message
-            notification = "A new version has arrived. Version {version} can be downloaded with the link {url}"
+            message = "A new version has arrived. Version {version} can be downloaded with the link {url}"
         }
     }
     ```

@@ -21,7 +21,7 @@ Just call the `Schema` function and begin configuring.
     ```kotlin title="MyFile.kt"
     val schema = Schema {
         // The prefix stands before the actual version, e.g. 'v1.0.0'
-        prefix = "v"
+        prefixes = listOf("v")
         // The symbol that divides the version numbers
         divider = "."
         // A classifier is an argument that can be added to a version that defines if it's a 'special' version
@@ -34,7 +34,7 @@ Just call the `Schema` function and begin configuring.
             // Divider between the components
             componentDivider = "."
             // The priority that the classifier has in comparison to other classifiers
-            priority = ClassifierPriority.LOW
+            priority = 1.priority
         }
     }
     ```
@@ -54,13 +54,13 @@ When using the `SchemaBuilder`, you can easily add a custom classifier with the 
 
     ```kotlin title="MyFile.kt"
     val schema = Schema {
-        prefix = "v"
+        prefix = listOf("v")
         divider = "."
         customClassifier(HangarSchemaClassifier(
             value = "rc",
             divider = "-",
             componentDivider = ".",
-            priority = ClassifierPriority.HIGH,
+            priority = 2.priority,
             channel = "Beta"
         ))
     }
@@ -70,12 +70,12 @@ When using the `SchemaBuilder`, you can easily add a custom classifier with the 
 
 This section goes into the indepth function/purpose of the values inside the `DefaultUpdateSchema` as it is equal to the default `UpdateSchema` interface values.
 
-### Prefix
+### Prefixes
 
-The prefix is the symbol that stands before the rest of the version string.
+The prefixes are a collection of symbols that stand before the rest of the version string.
 This can be a simple `v` or `v.`, or even something like `version(new)-`. 
-This prefix will not be used for any comparisons and is generally removed.
-The removal is generally done by replacing the prefix with an empty string.
+This collection will not be used for any comparisons and is generally removed.
+The removal is generally done by replacing the prefixes with an empty string.
 
 ### Divider
 
@@ -113,7 +113,6 @@ Each `Classifier` will implement this on its own so the behavior can differentia
 
 The priority defines the importance of  a `SchemaClassifer`.
 This is used to compare different `SchemaClassifiers` to find the prioritized one.
-Each priority has an assigned integer, the higher the priority, the higher assigned integer.
 
 ## Custom Update Schemas
 !!! Warning "Warning"
@@ -132,7 +131,7 @@ To create a custom `UpdateSchema` you will first need to create a class
 
     ```kotlin title="CustomUpdateSchema.kt"
     data class CustomUpdateSchema(
-        override val prefix: String,
+        override val prefixs: Collection<String>,
         override val divider: String,
         override val classifiers: Collection<SchemaClassifier>
     ) : UpdateSchema {
@@ -148,7 +147,7 @@ to handle the special attributes that your version introduces.
 
     ```kotlin title="CustomUpdateSchema.kt"
     data class CustomUpdateSchema(
-        override val prefix: String,
+        override val prefix: Collection<String>,
         override val divider: String,
         override val classifiers: Collection<SchemaClassifier>,
         val description: String,
@@ -181,7 +180,7 @@ To create a custom `SchemaClassifier` you will first need to create a class
     ```kotlin title="CustomUpdateSchema.kt"
     data class CustomUpdateSchema(
         override val value: String,
-        override val priority: ClassifierPriority,
+        override val priority: Priority,
         override val divider: String,
         override val componentDivider: String
     ) : SchemaClassifier {
@@ -198,7 +197,7 @@ to handle the special classifier that your version introduces.
     ```kotlin title="CustomUpdateSchema.kt"
     data class CustomUpdateSchema(
         override val value: String,
-        override val priority: ClassifierPriority,
+        override val priority: Priority,
         override val divider: String,
         override val componentDivider: String,
         val description: String,
