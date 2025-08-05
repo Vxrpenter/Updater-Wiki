@@ -14,6 +14,10 @@ date: 2025-08-05
 To check for an update using a single upstream, you first need to invoke the `Updater` class.
 After that, call the `checkUpdates` function.
 
+It checks for new updates by fetching the version from the specified upstream,
+then it compares the current version to the fetched one and (when enabled)
+returns a notification.
+
 !!!example
 
     ```kotlin
@@ -24,7 +28,25 @@ If you need to configure the updater, refer to [this](#configure-updater)
 
 ## Checking using multiple Upstreams
 
-### Configure Updater
+When you have multiple upstreams you upload your versions to, you might want to check them all to find a new update.
+To do this, you can simply call the `checkMultipleUpdates` function.
+
+It checks for new updates by fetching versions from multiple upstreams. 
+It then compares the versions by first checking for the biggest returned version.
+
+If the returned versions from at least 2 upstreams are equal, the prioritized
+upstream will be selected by comparing them using their Priority.
+
+!!!example
+    
+    ```kotlin
+    Updater.checkMultipleUpdates(currentVersion = "VERSION", schema = schema, upstreams = listOf(
+        GitHubUpstream("Vxrpenter", "PROJECT", upstreamPriority = 1.priority),
+        ModrinthUpstream("PROJECT", ModrinthProjectType.MOD, upstreamPriority = 2.priority)
+    ))
+    ```
+
+## Configure Updater
 
 !!! note
 
@@ -48,7 +70,7 @@ After calling any function from the updater class, you can easily add configurat
     }
     ```
 
-## Configuration in Constructor
+### Configuration in Constructor
 
 You can also create a configuration with the `ConfigurationBuilder` by calling the `configuration` function, outside any updater function.
 
