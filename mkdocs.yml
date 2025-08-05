@@ -82,6 +82,7 @@ nav:
     - Logging: setup/logging.md
   - Using Updater:
     - Getting Started: using-updater/index.md
+    - Checking for Versions: using-updater/checking-for-versions.md
     - Update Schemas: using-updater/update-schemas.md
     - Upstreams: using-updater/upstreams.md
     - Versions: using-updater/versions.md
