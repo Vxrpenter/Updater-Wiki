@@ -26,7 +26,7 @@ The classifiers that can be added using the `SchemaBuilder` are `DefaultClassifi
     ```kotlin
     val schema = Schema {
         // The prefix stands before the actual version, e.g. 'v1.0.0'
-        prefix = "v"
+        prefixes = listOf("v")
         // The symbol that divides the version numbers
         divider = "."
         // A classifier is an argument that can be added to a version that defines if it's a 'special' version
@@ -39,20 +39,20 @@ The classifiers that can be added using the `SchemaBuilder` are `DefaultClassifi
             // Divider between the components
             componentDivider = "."
             // The priority that the classifier has in comparison to other classifiers
-            priority = ClassifierPriority.LOW
+            priority = 1.priority
         }
         // Some extra classifiers for showcase
         classifier {
             value = "b"
             divider = "-"
             componentDivider = "."
-            priority = ClassifierPriority.HIGH
+            priority = 2.priority
         }
         classifier {
             value = "rc"
             divider = "-"
             componentDivider = "."
-            priority = ClassifierPriority.HIGHEST
+            priority = 3.priority
         }
     }
     ```
